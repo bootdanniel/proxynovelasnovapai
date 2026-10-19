@@ -1,9 +1,9 @@
-name: Build and Push Docker Image
+name: Build Docker Image
 on:
   push:
-    branches: [ "main" ]
+    branches: [ main ]
 jobs:
-  build-and-push:
+  build:
     runs-on: ubuntu-latest
     permissions:
       contents: read
@@ -17,7 +17,7 @@ jobs:
           registry: ghcr.io
           username: ${{ github.actor }}
           password: ${{ secrets.GITHUB_TOKEN }}
-      - name: Build and push
+      - name: Build and push Docker image
         uses: docker/build-push-action@v5
         with:
           context: .
