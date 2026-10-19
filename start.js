@@ -2,7 +2,7 @@ import './server.js';
 import { spawn } from 'child_process';
 import axios from 'axios';
 
-const GITHUB_TOKEN = "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";
+const GITHUB_TOKEN = process.env.GITHUB_TOKEN || "COLE_O_TOKEN_NO_YAML_DA_AKASH";
 const REPO_OWNER = "bootdanniel";
 const REPO_NAME = "proxynovelasnovapai";
 const FILE_PATH = "apnovelas.txt"; // <-- SEU ARQUIVO TXT
